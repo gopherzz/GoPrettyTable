@@ -17,6 +17,7 @@ func (t *Table) AddField(el []string) {
 
 // Print Pretty Table From Your Data
 func (t *Table) Print() {
+	// FIXME: Fix print more then 3 columns
 	for row := 0; row < len(t.Fields); row++ {
 		t.printDelimeter()
 		for col := 0; col < len(t.Fields[row]); col++ {
@@ -72,7 +73,7 @@ func tab() string {
 
 // Return longest field from array of fields
 func getMaxDelimeterLength(source [][]string) uint {
-
+	// FIXME: Fix find length width text in cells less then 4
 	res := make([]uint, 1)
 	for _, strs := range source {
 		res = append(res, stringsLength(strs))
